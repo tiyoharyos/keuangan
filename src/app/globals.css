@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  /* — Palet: nuansa buku tabungan / ledger fisik — */
+  --ink-950: #10151a;
+  --ink-900: #161c22;
+  --ink-800: #1f2730;
+  --ink-700: #2a333d;
+  --ink-600: #3a4550;
+  --paper-50: #f3efe4;
+  --paper-200: #ddd6c2;
+  --paper-400: #a39d8a;
+
+  --jade: #3fb68a;       /* pemasukan / saldo positif */
+  --jade-soft: #234339;
+  --amber: #e0a847;      /* pengeluaran */
+  --amber-soft: #4a3a20;
+  --denim: #7fa3c4;      /* transfer antar kantong */
+  --denim-soft: #25333f;
+  --rose: #d97373;       /* hapus / peringatan */
+
+  --background: var(--ink-950);
+  --foreground: var(--paper-50);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-ink-950: var(--ink-950);
+  --color-ink-900: var(--ink-900);
+  --color-ink-800: var(--ink-800);
+  --color-ink-700: var(--ink-700);
+  --color-ink-600: var(--ink-600);
+  --color-paper-50: var(--paper-50);
+  --color-paper-200: var(--paper-200);
+  --color-paper-400: var(--paper-400);
+
+  --color-jade: var(--jade);
+  --color-jade-soft: var(--jade-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-denim: var(--denim);
+  --color-denim-soft: var(--denim-soft);
+  --color-rose: var(--rose);
+
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-sora);
+  --font-mono: var(--font-plex-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+/* Tepi "robek" perforasi ala buku tabungan, dipakai di kartu akun terpilih */
+.perforated {
+  background-image: radial-gradient(
+    circle,
+    var(--ink-950) 2.5px,
+    transparent 2.6px
+  );
+  background-size: 14px 14px;
+  background-position: -4px center;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tap-scale {
+    transition: transform 120ms ease;
+  }
+  .tap-scale:active {
+    transform: scale(0.97);
+  }
+}
